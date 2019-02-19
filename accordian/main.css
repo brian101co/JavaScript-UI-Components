@@ -1,0 +1,30 @@
+body {font-family: 'Montserrat', sans-serif;}
+
+.title {
+    display: flex;
+    justify-content: space-between;
+    background: #82d1db;
+    color: white;
+    font-weight: bold;
+    padding: 1rem;
+}
+
+.title:hover,
+.title:active {
+    background: #54acb8;
+}
+
+.title::after {
+    content: '\02795';
+    font-size: 0.8rem;
+}
+
+.section-info {
+    padding: 0.5rem;
+    background: #f4f4f4;
+}
+
+.hide {
+    display: none;
+}
+
