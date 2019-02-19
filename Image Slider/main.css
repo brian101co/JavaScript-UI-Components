@@ -1,0 +1,46 @@
+.slider {
+    position: relative;
+}
+
+.slider img {
+    width: 100%;
+    height: 525px;
+    transform: translateX(0);
+    transition: transform 3s ease-in-out;
+}
+
+button {
+    background: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    outline: none;
+}
+
+button:hover {
+    color: grey;
+}
+
+#control-left {
+    position: absolute;
+    top: 240px;
+    left: 10px;
+}
+
+#control-right {
+    position: absolute;
+    top: 240px;
+    right: 10px;
+}
+
+.location {
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    bottom: 10px;
+}
+
+.location i {
+    color: rgb(184, 180, 180);
+    opacity: 0.5;  
+}
