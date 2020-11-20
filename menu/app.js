@@ -26,7 +26,36 @@ class Nav {
     }
 }
 
+class Dropdown {
+    constructor(elem) {
+        this.isOpen = false;
+        this.elem = elem;
+
+        if (elem instanceof Element) {
+            const self = this;
+            this.elem.addEventListener('click', function (event) {
+                event.preventDefault();
+                self.open();
+            });
+        } else {
+            throw "The element must be an HTML element."
+        }
+    }
+
+    open() {
+        if (!this.isOpen) {
+            this.elem.querySelector(".dropdown-list").classList.add("show-dropdown");
+        } else {
+            this.elem.querySelector(".dropdown-list").classList.remove("show-dropdown");
+        }
+
+        this.isOpen = !this.isOpen;
+    }
+}
+
 const navBtn = document.querySelector('.menu-btn');
 const menu = document.querySelector('.menu-list');
+const dropdown = document.querySelector('.dropdown');
+
 const mainNav = new Nav(navBtn, menu);
-// mainNav.init();
+const navDropdown = new Dropdown(dropdown);

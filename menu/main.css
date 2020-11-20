@@ -49,6 +49,29 @@
     background-color: #333;
 }
 
+.dropdown {
+    position: relative;
+}
+
+.dropdown-list {
+    display: none;
+    border: 1px solid #ccc;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    border-radius: 4px;
+    padding: 0.75rem;
+    position: absolute;
+}
+
+.dropdown-list a:not(:first-child) {
+    margin-top: 0.5rem;
+}
+
+.show-dropdown {
+    display: flex;
+    flex-direction: column;
+}
+
+
 @media(max-width: 400px) {
     .menu-btn {
         display: block;
