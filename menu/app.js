@@ -1,18 +1,18 @@
-class Nav {
+class Navbar {
     constructor(target, menu) {
-        if (target instanceof Element && menu instanceof Element) {
+        // 1. Check parameters type and throw error if not an HTML element
+        if (target instanceof HTMLElement && menu instanceof HTMLElement) {
+            // 2. If parameters are HTML elements set the attributes
             this.btn = target;
             this.menu = menu;
-
-            const self = this;
-            this.btn.addEventListener('click', function () {
-                console.log("clicked");
-                self.open();
+            
+            target.addEventListener('click', () => {
+                this.open();
             });
         } else {
-            throw "The target and Menu must be a DOM element."
+            throw new TypeError("The Target and Menu arguments must be a DOM element."); 
         }
-        this.isopen = false;
+        this.isOpen = false;
     }
 
     open() {
@@ -21,7 +21,6 @@ class Nav {
         } else {
             this.menu.classList.remove('nav-hidden');
         }
-
         this.isopen = !this.isopen;
     }
 }
@@ -57,5 +56,5 @@ const navBtn = document.querySelector('.menu-btn');
 const menu = document.querySelector('.menu-list');
 const dropdown = document.querySelector('.dropdown');
 
-const mainNav = new Nav(navBtn, menu);
+const navbar = new Navbar(navBtn, menu);
 const navDropdown = new Dropdown(dropdown);
